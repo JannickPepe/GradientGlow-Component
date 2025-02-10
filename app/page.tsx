@@ -1,15 +1,12 @@
 import { Glow, GlowArea } from "@/components/glow";
 import { Button } from "@/components/ui/button";
-import {
-  CardFooter,
-  Card,
-  CardHeader,
-  CardTitle,
-  CardDescription,
-  CardContent,
-} from "@/components/ui/card";
+import { CardFooter, Card, CardHeader, CardTitle, CardDescription, CardContent, } from "@/components/ui/card";
 import { GamepadIcon, Lock, Rocket, Server, Trophy, Users } from "lucide-react";
+import relaxImg from "@/public/relax-6.jpeg";
+import Image from "next/image";
+
 export default function Home() {
+
   return (
     <section>
       <GlowArea className="flex gap-8 items-center justify-center p-12">
@@ -50,6 +47,7 @@ export default function Home() {
             </CardFooter>
           </Card>
         </Glow>
+
         <Glow className="rounded-xl">
           {" "}
           <Card className="max-w-md">
@@ -93,14 +91,30 @@ export default function Home() {
             </CardFooter>
           </Card>
         </Glow>
+        
         <Glow color="teal">
-          <ul className="p-24">
-            <li>NighteCoding</li>
-            <li>NighteCoding</li>
-            <li>NighteCoding</li>
-            <li>NighteCoding</li>
-            <li>NighteCoding</li>
+          <ul className="p-4">
+            <Image src={relaxImg} alt="Price Image" className="size-60 rounded-[8px]" />
+            <div className="mt-4 space-y-4">
+              <li className="flex items-center space-x-3">
+                <Rocket className="text-foreground" size={20} />
+                <span>NighteCoding</span>
+              </li>
+              <li className="flex items-center space-x-3">
+                <Trophy className="text-foreground" size={20} />
+                <span>NighteCoding</span>
+              </li>
+              <li className="flex items-center space-x-3">
+                <Lock className="text-foreground" size={20} />
+                <span>NighteCoding</span>
+              </li>
+              <li className="flex items-center space-x-3">
+                <Server className="text-foreground" size={20} />
+                <span>NighteCoding</span>
+              </li>
+            </div>
           </ul>
+          <Button className="w-3/4 mx-auto flex justify-center mb-4">Contact</Button>
         </Glow>
       </GlowArea>
     </section>
