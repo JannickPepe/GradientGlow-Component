@@ -1,20 +1,21 @@
 import { Glow, GlowArea } from "@/components/glow";
+import PricingText from "@/components/PricingText";
 import { Button } from "@/components/ui/button";
 import { CardFooter, Card, CardHeader, CardTitle, CardDescription, CardContent, } from "@/components/ui/card";
 import { GamepadIcon, Lock, Rocket, Server, Trophy, Users } from "lucide-react";
-import relaxImg from "@/public/relax-6.jpeg";
-import Image from "next/image";
 
 export default function Home() {
 
   return (
-    <section>
-      <GlowArea className="flex gap-8 items-center justify-center p-12">
+    <section className="lg:pt-10 pb-16">
+      <PricingText />
+
+      <GlowArea className="flex gap-10 items-center justify-center flex-col lg:flex-row mt-10">
         <Glow color="red" className="rounded-xl">
-          <Card className="max-w-md">
+          <Card className="max-w-md group">
             <CardHeader>
-              <CardTitle>Free plan</CardTitle>
-              <CardDescription className="max-w-sm">
+              <CardTitle className="text-center text-3xl group-hover:underline">Free plan</CardTitle>
+              <CardDescription className="max-w-sm text-center">
                 2 Monthly free games, trials and perks for you to enjoy.
               </CardDescription>
             </CardHeader>
@@ -50,10 +51,10 @@ export default function Home() {
 
         <Glow className="rounded-xl">
           {" "}
-          <Card className="max-w-md">
+          <Card className="max-w-md group">
             <CardHeader>
-              <CardTitle>Pro plan</CardTitle>
-              <CardDescription className="max-w-sm">
+              <CardTitle className="text-center text-3xl group-hover:underline">Pro plan</CardTitle>
+              <CardDescription className="max-w-sm text-center">
                 Everything you need to game, from{" "}
                 <span className="text-primary">$20/month.</span>
               </CardDescription>
@@ -90,31 +91,6 @@ export default function Home() {
               <Button className="w-full">Subscribe</Button>
             </CardFooter>
           </Card>
-        </Glow>
-        
-        <Glow color="teal">
-          <ul className="p-4">
-            <Image src={relaxImg} alt="Price Image" className="size-60 rounded-[8px]" />
-            <div className="mt-4 space-y-4">
-              <li className="flex items-center space-x-3">
-                <Rocket className="text-foreground" size={20} />
-                <span>NighteCoding</span>
-              </li>
-              <li className="flex items-center space-x-3">
-                <Trophy className="text-foreground" size={20} />
-                <span>NighteCoding</span>
-              </li>
-              <li className="flex items-center space-x-3">
-                <Lock className="text-foreground" size={20} />
-                <span>NighteCoding</span>
-              </li>
-              <li className="flex items-center space-x-3">
-                <Server className="text-foreground" size={20} />
-                <span>NighteCoding</span>
-              </li>
-            </div>
-          </ul>
-          <Button className="w-3/4 mx-auto flex justify-center mb-4">Contact</Button>
         </Glow>
       </GlowArea>
     </section>
